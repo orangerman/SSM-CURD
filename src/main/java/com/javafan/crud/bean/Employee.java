@@ -1,8 +1,5 @@
 package com.javafan.crud.bean;
 
-/**
- * 实体类
- */
 public class Employee {
     private Integer empId;
 
