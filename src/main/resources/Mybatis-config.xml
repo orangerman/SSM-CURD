@@ -6,16 +6,22 @@
     <settings>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
-<!--    <environments default="development">-->
-<!--        <environment id="development">-->
-<!--            <transactionManager type="JDBC"/>-->
-<!--            <dataSource type="POOLED">-->
-<!--                <property name="driver" value="${driver}"/>-->
-<!--                <property name="url" value="${url}"/>-->
-<!--                <property name="username" value="${username}"/>-->
-<!--                <property name="password" value="${password}"/>-->
-<!--            </dataSource>-->
-<!--        </environment>-->
-<!--    </environments>-->
+    <!--    <environments default="development">-->
+    <!--        <environment id="development">-->
+    <!--            <transactionManager type="JDBC"/>-->
+    <!--            <dataSource type="POOLED">-->
+    <!--                <property name="driver" value="${driver}"/>-->
+    <!--                <property name="url" value="${url}"/>-->
+    <!--                <property name="username" value="${username}"/>-->
+    <!--                <property name="password" value="${password}"/>-->
+    <!--            </dataSource>-->
+    <!--        </environment>-->
+    <!--    </environments>-->
+    <!--    <typeAliases>-->
+    <!--        <package name="com.javafan.crud.bean"/>-->
+    <!--    </typeAliases>-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+    </plugins>
 
 </configuration>
