@@ -1,6 +1,8 @@
 package com.javafan.crud.bean;
 
 public class Department {
+
+
     private Integer deptId;
 
     private String deptName;
@@ -36,4 +38,5 @@ public class Department {
                 ", deptName='" + deptName + '\'' +
                 '}';
     }
+
 }
