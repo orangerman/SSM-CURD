@@ -60,4 +60,13 @@ public class Msg {
     public void setExtend(Map<String, Object> extend) {
         this.extend = extend;
     }
+
+    @Override
+    public String toString() {
+        return "Msg{" +
+                "code=" + code +
+                ", msg='" + msg + '\'' +
+                ", extend=" + extend +
+                '}';
+    }
 }

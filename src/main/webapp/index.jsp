@@ -37,7 +37,7 @@
                         <label class="col-sm-2 control-label">empName</label>
                         <div class="col-sm-10">
                             <p class="form-control-static" id="empName_update_static"></p>
-                        </div>
+                    </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">email</label>
@@ -402,7 +402,8 @@
         }
     }
 
-    //校验用户名是否可用
+    //校验用户名是否可用 从数据库中查看
+    //change事件  内容改变时调用
     $("#empName_add_input").change(function(){
         //发送ajax请求校验用户名是否可用
         var empName = this.value;
@@ -500,7 +501,7 @@
         });
     }
 
-    //点击更新，更新员工信息
+    //点击更新按钮，更新员工信息
     $("#emp_update_btn").click(function(){
         //验证邮箱是否合法
         //1、校验邮箱信息
@@ -517,7 +518,7 @@
         $.ajax({
             url:"${APP_PATH}/emp/"+$(this).attr("edit-id"),
             type:"PUT",
-            data:$("#empUpdateModal form").serialize(),
+            data: $("#empUpdateModal form").serialize(),
             success:function(result){
                 //alert(result.msg);
                 //1、关闭对话框

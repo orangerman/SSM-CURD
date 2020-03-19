@@ -1,12 +1,19 @@
 package com.javafan.crud.bean;
 
+import org.hibernate.validator.constraints.Email;
+
+import javax.validation.constraints.Pattern;
+
 public class Employee {
     private Integer empId;
 
+    @Pattern(regexp = "(^[a-zA-Z0-9_-]{6,16}$)|(^[\\u2E80-\\u9FFF]{2,5})"
+            ,message = "用户名必须必须是6到16位数字和字母的组合 或者2到5位的中文")
     private String empName;
 
     private String gender;
 
+    @Email(message = "邮箱格式不正确")
     private String email;
 
     private Integer dId;

@@ -3,8 +3,10 @@ package com.javafan.crud.test;
 
 import com.javafan.crud.bean.Department;
 import com.javafan.crud.bean.Employee;
+import com.javafan.crud.bean.Msg;
 import com.javafan.crud.dao.DepartmentMapper;
 import com.javafan.crud.dao.EmployeeMapper;
+import com.javafan.crud.service.DepartmentService;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -36,9 +39,12 @@ public class MapperTest {
     @Autowired
     SqlSession sqlSession;
 
+    @Autowired
+    DepartmentService departmentService;
+
 
     @Test
-    public void testCRUD() {
+    public void testCrud() {
 //        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 //        DepartmentMapper departmentMapper = ctx.getBean(DepartmentMapper.class);
 //        System.out.println(departmentMapper);
@@ -60,6 +66,21 @@ public class MapperTest {
 
         Employee employee = employeeMapper.selectByPrimaryKeyWithDept(1);
         System.out.println(employee);
+        System.out.println("*******************");
+        Employee employee1 = employeeMapper.selectByPrimaryKey(1);
+        System.out.println(employee1);
+
+    }
+
+
+    @Test
+    public void testDepartmentService() {
+//        List<Department> list = departmentMapper.selectByExample(null);
+//        System.out.println(list);
+        List<Department> depts = departmentService.getDepts();
+//        System.out.println(depts);
+        Msg ms = Msg.success().add("depts", depts);
+        System.out.println(ms);
 
     }
 
