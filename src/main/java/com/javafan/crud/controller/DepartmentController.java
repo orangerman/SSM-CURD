@@ -21,7 +21,6 @@ public class DepartmentController {
 
     /**
      * 返回所有的部门信息
-     * 完成所有操作
      * @return
      */
 
