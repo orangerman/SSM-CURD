@@ -29,7 +29,7 @@ public class EmployeeService {
     /**
      * 员工保存方法
      *
-     * @param employee
+     * @param employee 员工记录
      */
     public void saveEmp(Employee employee) {
         employeeMapper.insertSelective(employee);
@@ -38,7 +38,7 @@ public class EmployeeService {
     /**
      * 检验用户名是否可用
      *
-     * @param empName
+     * @param empName 员工name
      * @return true 代表该用户名可用 数据库没有该用户名
      */
     public boolean checkUser(String empName) {
